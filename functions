@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int check(int b);
+int main()
+
+{
+	int a,b;
+	cout<<"Enter a positive integer:";
+	cin>>a;
+ int flag=0;
+ for(b=2;b<=a/2;b++)
+ {
+ 	if(check(b)==1)
+ 	{if(check(a-b)==1)
+ 
+ 	cout<<"\n"<<b+(a-b)<<"="<<b<<"+"<<a-b;
+ 	flag=1;
+	 }
+ }
+if(flag==0)
+cout<<"\n It cannot be expressed as a sum of two prime numbers";
+		
+	return 0;
+}
+int check(int b)
+{
+	int i,p=1;
+	for(i=2;i<=b/2;++i)
+	{if(b%i==0){
+		p=0;
+		break;
+	}
+	}
+	return p;
+}
